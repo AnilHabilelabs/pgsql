@@ -25,7 +25,7 @@ select concat(lpad(cast(round(salary) as Varchar),15,'$'),last_name) "SALARY" fr
 ```
 
 select last_name,hire_date,extract( isodow from hire_date) as dayofweek,
-to_char( hire_date, 'Day') as day from employees order by dayofweek;
+to_char( hire_date, 'DayName') as day from employees order by dayofweek;
 
 ```
 
