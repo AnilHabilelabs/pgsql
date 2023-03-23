@@ -6,6 +6,7 @@ select last_name, extract(year from age(current_date, hire_date))*12 + extract(m
 ```
 
 ## 2. Write a query that produces the following for each employee: <employee last name> earns <salary> monthly but wants <3 times salary>. Label the column Dream Salaries.
+
 ```
 SELECT concat(last_name,' earns ',round(salary), ' monthly but wants ',round(3\*salary)) "Dream Salaries" from employees;
 
@@ -23,7 +24,8 @@ select concat(lpad(cast(round(salary) as Varchar),15,'$'),last_name) "SALARY" fr
 
 ```
 
-select last_name,hire_date,extract( isodow from hire_date) as day from employees order by day;
+select last_name,hire_date,extract( isodow from hire_date) as dayofweek,
+to_char( hire_date, 'Day') as day from employees order by dayofweek;
 
 ```
 
@@ -65,6 +67,8 @@ else '0'
 END "GRADE"
 from employees inner join jobs
 on employees.job_id = jobs.job_id
+
+```
 
 ```
 
