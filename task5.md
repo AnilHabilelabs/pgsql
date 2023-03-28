@@ -1,4 +1,4 @@
-## 1. Create a table MY\_ EMPLOYEE with columns id, last_name,first_name,user_id,salary.
+## 1. Create a table MY_EMPLOYEE with columns id, last_name,first_name,user_id,salary.
 
 ```
 create table MY_EMPLOYEE (id serial primary key not null,
@@ -28,7 +28,7 @@ values('anil','karela',concat(substring('anil',1,1),
 ## 3. Confirm your addition to the table.
 
 ```
-Confirm your addition to the table.
+select * from my_employee;
 ```
 
 ## 4. Make the data additions permanent.
@@ -43,7 +43,7 @@ commit
 update my_employee set last_name = 'Drexler' where id = 6;
 ```
 
-## 6. Change the last name of employee 103 to Drexler.
+## 6. Change the salary to 1000 for all employees with a salary less than 900.
 
 ```
 update my_employee set salary = 1000 where salary <900;
@@ -58,7 +58,7 @@ select * from my_employee;
 ## 8. Delete anil kumar from the MY_EMPLOYEE table.
 
 ```
-delete from my_employee where first_name = 'anil';
+delete from my_employee where first_name='anil' and last_name='karela';
 ```
 
 ## 9. Confirm your changes to the table.
