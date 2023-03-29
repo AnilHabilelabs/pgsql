@@ -76,7 +76,7 @@ commit
 # 11.Modify the MY_EMPLOYEES table to allow for longer employee last names. Confirm your modification.
 
 ```
-alter table my_employee alter column last_name varchar(50);
+alter table my_employee alter column last_name type varchar(50);
 ```
 
 > we can check the schemas of the table and new longer length of last_name using this
